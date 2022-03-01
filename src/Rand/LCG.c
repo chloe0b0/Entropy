@@ -35,7 +35,7 @@ LCG* construct_LCG(double m, double a, double c, double X0){
 
 double yield(LCG* lcg){
     lcg->x = fmod( ( lcg->a * lcg->x + lcg->c ), lcg->m ); // X_n+1 = (aX_n + c) mod m
-
+    
     return lcg->x;
 }
 
@@ -47,7 +47,7 @@ int main(void){
     LCG *rand = construct_LCG(MOD, A, C, time(NULL));
 
     for (int i = 0; i < 10; ++i){
-        printf("%.17g\n", 1.0 / yield(rand));
+        printf("%.17g\n", yield(rand));
     }
 
 }
