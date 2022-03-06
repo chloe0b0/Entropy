@@ -35,7 +35,7 @@ LCG* construct_LCG(double m, double a, double c, double X0){
 
 double yield(LCG* lcg){
     lcg->x = fmod( ( lcg->a * lcg->x + lcg->c ), lcg->m ); // X_n+1 = (aX_n + c) mod m
-    
+
     return lcg->x;
 }
 
