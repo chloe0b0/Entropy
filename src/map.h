@@ -7,8 +7,15 @@
 /*  Implementation of a hashmap to hold arbitrary types */
 typedef struct HashTable{
     void* arr;
-    unsigned int size, occupied_entries; 
+    unsigned int size, occupied_entries;
 }HashTable;
+
+
+// Hash Function for abitrary type
+
+int Hash(const char* x){
+
+}
 
 HashTable* Create_HashTable(unsigned int size){
     HashTable* map = (HashTable*)malloc( sizeof(HashTable) );

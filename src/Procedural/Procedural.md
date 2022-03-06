@@ -6,4 +6,4 @@
 > 
 > Grammar systems and generators (CFG/ L-Systems)
 >
-> Perlin Nosie generator
+> Perlin Noise generator
