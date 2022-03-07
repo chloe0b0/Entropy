@@ -44,8 +44,7 @@ void* Get(HashTable* m, const char* x){
 
 HashTable* Create_HashTable(unsigned int size){
     HashTable* map = (HashTable*)malloc( sizeof(HashTable) );
-    map->arr = malloc( sizeof(void*) * size );
-    for (int i = 0; i < size; ++i){ map->arr[i] = NULL; }
+    map->arr = calloc(size, sizeof(void*));
     map->size = size;
     map->occupied_entries = 0;
 
