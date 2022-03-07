@@ -32,9 +32,10 @@ void Set(HashTable* m, const char* x, void* y){
 }
 
 void Clear(HashTable* m, const char* x){
-    --m->occupied_entries;
     int ix = CharSumHash(x, m->size);
+    if (!m->arr[ix]){ return; }
     m->arr[ix] = NULL;
+    --m->occupied_entries;
 }
 
 void* Get(HashTable* m, const char* x){
@@ -44,6 +45,7 @@ void* Get(HashTable* m, const char* x){
 
 HashTable* Create_HashTable(unsigned int size){
     HashTable* map = (HashTable*)malloc( sizeof(HashTable) );
+
     map->arr = calloc(size, sizeof(void*));
     map->size = size;
     map->occupied_entries = 0;
