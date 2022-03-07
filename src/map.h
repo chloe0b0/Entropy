@@ -10,13 +10,15 @@ typedef struct HashTable{
     void** arr;
 }HashTable;
 
+// Hash strings
 int CharSumHash(const char* x, unsigned int HashTableSize){
     unsigned int sum, l;
     sum = 0;
     l = strlen(x);
 
     for (int i = 0; i < l; ++i){
-        sum += (sum * x[i]) % HashTableSize;
+        sum += x[i];
+        sum = (sum * x[i]) % HashTableSize;
     }
 
     return sum;
@@ -42,8 +44,8 @@ void* Get(HashTable* m, const char* x){
 
 HashTable* Create_HashTable(unsigned int size){
     HashTable* map = (HashTable*)malloc( sizeof(HashTable) );
-    void** arr;
-    map->arr = arr;
+    map->arr = malloc( sizeof(void*) * size );
+    for (int i = 0; i < size; ++i){ map->arr[i] = NULL; }
     map->size = size;
     map->occupied_entries = 0;
 
