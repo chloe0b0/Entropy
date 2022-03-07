@@ -2,25 +2,46 @@
 #define MAP_H_
 
 #include <stdlib.h>
-
+#include <string.h>
 
 /*  Implementation of a hashmap to hold arbitrary types */
 typedef struct HashTable{
-    void* arr;
     unsigned int size, occupied_entries;
+    void** arr;
 }HashTable;
 
+int CharSumHash(const char* x, unsigned int HashTableSize){
+    unsigned int sum, l;
+    sum = 0;
+    l = strlen(x);
 
-// Hash Function for abitrary type
+    for (int i = 0; i < l; ++i){
+        sum += (sum * x[i]) % HashTableSize;
+    }
 
-int Hash(const char* x){
+    return sum;
+}
 
+void Set(HashTable* m, const char* x, void* y){
+    int ix = CharSumHash(x, m->size);
+    // Handle collisions later
+    if (!m->arr[ix]){ m->arr[ix] = y; }
+}
+
+void Clear(HashTable* m, const char* x){
+    int ix = CharSumHash(x, m->size);
+    m->arr[ix] = NULL;
+}
+
+void* Get(HashTable* m, const char* x){
+    int ix = CharSumHash(x, m->size);
+    return m->arr[ix];
 }
 
 HashTable* Create_HashTable(unsigned int size){
     HashTable* map = (HashTable*)malloc( sizeof(HashTable) );
-    
-    map->arr = malloc( sizeof(void*) * size );
+    void** arr;
+    map->arr = arr;
     map->size = size;
     map->occupied_entries = 0;
 
