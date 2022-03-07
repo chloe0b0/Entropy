@@ -4,9 +4,7 @@
 
 int main(void){
     HashTable* m = Create_HashTable(10);
-    char* x = "x";
-
-    Set(m, "x", "y");
-    char* str = (char*)Get(m, x);
-    printf("%s\n", str);
+    Set(m, "x", (int*)8);
+    int* str = (int*)Get(m, "x");
+    printf("%d\n", str);
 }

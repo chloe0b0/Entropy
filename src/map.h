@@ -26,9 +26,11 @@ void Set(HashTable* m, const char* x, void* y){
     int ix = CharSumHash(x, m->size);
     // Handle collisions later
     if (!m->arr[ix]){ m->arr[ix] = y; }
+    ++m->occupied_entries;
 }
 
 void Clear(HashTable* m, const char* x){
+    --m->occupied_entries;
     int ix = CharSumHash(x, m->size);
     m->arr[ix] = NULL;
 }
