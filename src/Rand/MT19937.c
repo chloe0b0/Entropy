@@ -50,3 +50,8 @@
             
 
 */
+
+
+typedef struct MT{
+    unsigned long long state;
+}MT19937;
