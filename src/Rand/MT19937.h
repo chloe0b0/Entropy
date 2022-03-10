@@ -78,15 +78,4 @@ double genMTReal(MT19937* mt){
     return (double)(genMTNat(mt)) / 0xffffffffUL;
 }
 
-int main(void){
-    MT19937 mt;
-    seedMT(&mt, CONSTANT_SEED);
-
-    int x;
-    for (x = 0; x < 1000; ++x){
-        printf("%5f ", genMTReal(&mt));
-        if (x % 8 == 0){ printf("\n"); }
-    }
-}
-
 #endif
