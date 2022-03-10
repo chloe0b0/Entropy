@@ -4,6 +4,8 @@
 #include "MT19937.h"
 
 // Implementation of the Mersenne Twister
+// Original paper: http://www.math.sci.hiroshima-u.ac.jp/m-mat/MT/ARTICLES/mt.pdf
+
 
 #define F 69069
 
@@ -30,7 +32,7 @@ void seedMT(MT19937* mt, unsigned long seed){
 // Generates a natural number in the interval [0, 2^w - 1]
 unsigned long genMTNat(MT19937* mt){
     unsigned long y;
-    unsigned long mag[2] = {0x0, A};
+    const unsigned long mag[2] = {0x0, A};
     
     if (mt->index >= N){
         // Check for seed
