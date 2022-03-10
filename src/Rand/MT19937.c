@@ -56,17 +56,17 @@ unsigned long genMTNat(MT19937* mt){
     }
 
     y = mt->state[mt->index++];
-    y ^= (y >> 11);
-    y ^= (y << 7) & T_MASK_B;
-    y ^= (y >> 15) & T_MASK_C;
-    y ^= (y << 18);
+    y ^= (y >> 11 );
+    y ^= (y << 7  ) & T_MASK_B;
+    y ^= (y >> 15 ) & T_MASK_C;
+    y ^= (y << 18 );
 
     return y;
 }
 
 // Generates a real number in the interval [0, 1]
 double genMTReal(MT19937* mt){
-    return (double)(genMTNat(mt)) / (unsigned long)0xffffffff;
+    return (double)(genMTNat(mt)) / 0xffffffffUL;
 }
 
 int main(void){
