@@ -16,7 +16,7 @@
 #define T_MASK_B 0x9d2c5680
 #define T_MASK_C 0xefc60000
 
-// If the MT struct is not seeded, this seed will be used (taken from the original paper C implementation)
+// If the MT struct is not seeded, this seed will be used (taken from the original paper's C implementation)
 #define CONSTANT_SEED 4357
 
 // Seeds an MT19937 struct with an unsigned long
