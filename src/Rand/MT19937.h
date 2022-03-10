@@ -2,7 +2,6 @@
 #define __MT__H
 
 #include <stdio.h>
-#include <stdlib.h>
 
 // Implementation of the Mersenne Twister
 // Original paper: http://www.math.sci.hiroshima-u.ac.jp/m-mat/MT/ARTICLES/mt.pdf
