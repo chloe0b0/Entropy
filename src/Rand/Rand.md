@@ -24,7 +24,7 @@ Implementations of various pseudo-random number generators
 
 int main(void){
     MT19937 mt;
-    seedMT(&mt, time(NULL));
+    seedMT(&mt, time(NULL)); // if the seed is not set manually, a pre-determined seed will be used (4357 by default)
 
     for (int i = 0; i < 10; ++i){
         printf("%5f ", genMTReal(&mt)); // generate real numbers in the interval [0, 1]
