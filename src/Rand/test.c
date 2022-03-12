@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
 
 #include "MT19937.h"
+#include "LCG.h"
 
 int main(void){
-    MT19937 mt;
-    seedMT(&mt, time(NULL));
+    unsigned long long mod, inc, mult, seed;
 
-    for (int i = 0; i < 10; ++i){
-        printf("%5f ", genMTReal(&mt));
-    }
-    printf("\n");
+    mod = 0x100000000;
+    inc = 1;
+    mult = 0x15A4E35;
 
+    seed = time(NULL);
+
+    LCG* lcg = ConstructLCG(mod, inc, mult, seed);
+    
     for (int i = 0; i < 10; ++i){
-        printf("%lu ", genMTNat(&mt));
+        printf("%lu ", genLCG(lcg));
     }
 }
