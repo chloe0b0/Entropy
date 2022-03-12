@@ -7,7 +7,7 @@
 
 int main(void){
     unsigned long long mod, inc, mult, seed;
-
+    // Borland C/C++ parameters from https://en.wikipedia.org/wiki/Linear_congruential_generator
     mod = 0x100000000;
     inc = 1;
     mult = 0x15A4E35;

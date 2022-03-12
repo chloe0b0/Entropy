@@ -1,7 +1,7 @@
 #ifndef LCG_H_
 #define LCG_H_
 
-#include <stdlib.h>
+#include <stdlib.h> 
 
 typedef struct LCG{ unsigned long long modulus, increment, multiplier, state; }LCG;
 
