@@ -11,8 +11,6 @@ Implementations of various pseudo-random number generators
 
 
 ## TODO
-> Implement LFSR with arbitrary state size and taps
->
 > Later implement the Diehard tests
 
 ## MT19937 usage
