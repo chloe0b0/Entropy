@@ -5,7 +5,7 @@
 
 typedef struct LCG{ unsigned long long modulus, increment, multiplier, state; }LCG;
 
-LCG* ConstructLCG(unsigned long long  modulus, unsigned long long  increment, unsigned long long  multiplier, unsigned long long seed){
+LCG* ConstructLCG(unsigned long long modulus, unsigned long long increment, unsigned long long multiplier, unsigned long long seed){
     LCG* lcg = (LCG*) malloc( sizeof(LCG) );
 
     lcg->state = seed;
