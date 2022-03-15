@@ -6,14 +6,14 @@
 // Implementation of the Mersenne Twister
 // Original paper: http://www.math.sci.hiroshima-u.ac.jp/m-mat/MT/ARTICLES/mt.pdf
 
-#define N 624 
-#define M 397
-#define F 69069
+#define N       624 
+#define M       397
+#define F       69069
 
-#define A 0x9908b0df // constant coefficients of the twist matrix
+#define A        0x9908b0df // constant coefficients of the twist matrix
 
-#define U_MASK 0x80000000 // upper w-r bits 
-#define L_MASK 0x7fffffff // lower r bits
+#define U_MASK   0x80000000 // upper w-r bits 
+#define L_MASK   0x7fffffff // lower r bits
 
 /* Tempering */
 #define T_MASK_B 0x9d2c5680
@@ -22,7 +22,7 @@
 // If the MT struct is not seeded, this seed will be used (taken from the original paper's C implementation)
 #define CONSTANT_SEED 4357
 
-typedef struct MT{
+typedef struct{
     unsigned long state[N];
     unsigned int index;
 }MT19937;
