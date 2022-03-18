@@ -9,10 +9,6 @@ Implementations of various pseudo-random number generators
 >
 > MT19937 (Mersenne Twister)
 
-
-## TODO
-> Later implement the Diehard tests
-
 ## MT19937 usage
 ```c
 
