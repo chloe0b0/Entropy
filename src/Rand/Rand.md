@@ -23,15 +23,15 @@ Implementations of various pseudo-random number generators
 
 int main(void){
     MT19937 mt;
-    seedMT(&mt, time(NULL)); // if the seed is not set manually, a pre-determined seed will be used (4357 by default)
+    SeedMT(&mt, time(NULL)); // if the seed is not set manually, a pre-determined seed will be used (4357 by default)
 
     for (int i = 0; i < 10; ++i){
-        printf("%5f ", genMTReal(&mt)); // generate real numbers in the interval [0, 1]
+        printf("%5f ", GenMTReal(&mt)); // generate real numbers in the interval [0, 1]
     }
     printf("\n");
 
     for (int i = 0; i < 10; ++i){
-        printf("%lu ", genMTNat(&mt)); // generate natural numbers in the interval [0, 2^w - 1]
+        printf("%lu ", GenMTNat(&mt)); // generate natural numbers in the interval [0, 2^w - 1]
     }
 }
 
@@ -56,7 +56,7 @@ int main(void){
     LCG* lcg = ConstructLCG(mod, inc, mult, seed);
     
     for (int i = 0; i < 10; ++i){
-        printf("%lu ", genLCG(lcg));
+        printf("%lu ", GenLCG(lcg));
     }
 }
 
